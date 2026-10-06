@@ -1,0 +1,550 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Tally / QuickBooks Professional Accounting System Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Crisp spreadsheet & accounting numbers */
+  .font-mono-num {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+
+  /* Table cell borders for high data density */
+  .tally-border {
+    border-color: #1e293b;
+  }
+}
+
+/* ========================================================
+   AUTHENTIC ACCOUNTING DESKTOP THEMES (DARK & LIGHT)
+   ======================================================== */
+
+/* Dark Theme (Default Tally Workstation) */
+.theme-dark {
+  background-color: #070d1e;
+  color: #f1f5f9;
+}
+
+/* Authentic Tally / QuickBooks Table Grid */
+.accounting-grid {
+  border-collapse: collapse;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+.accounting-grid th {
+  background-color: #002244;
+  color: #f8fafc;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 8px;
+  border: 1px solid #1e3a5f;
+  white-space: nowrap;
+}
+
+.accounting-grid td {
+  padding: 4px 8px;
+  border: 1px solid #1e293b;
+  font-size: 11px;
+}
+
+.accounting-grid tr:hover td {
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+/* Formal double-ruled accounting balance underline (GAAP/IFRS/PGC Standard) */
+.accounting-double-total {
+  border-top: 1px solid currentColor;
+  border-bottom: 3px double currentColor;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Tally Signature Hotkey Accelerator Underline */
+.hotkey-u {
+  text-decoration: underline;
+  text-decoration-color: #f59e0b;
+  text-underline-offset: 2.5px;
+  text-decoration-thickness: 1.5px;
+  font-weight: 700;
+}
+
+/* Function Key Button Styling */
+.fkey-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 6px;
+  background-color: #001733;
+  border: 1px solid #002d62;
+  color: #cbd5e1;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  text-align: center;
+  min-width: 64px;
+}
+
+.fkey-btn:hover {
+  background-color: #002d62;
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.fkey-btn .fkey-label {
+  color: #f59e0b;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Tally Gateway Menu & Window Specifics */
+.tally-window-frame {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  border: 2px solid #334155;
+}
+
+.theme-light .tally-window-frame {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #94a3b8;
+}
+
+/* Dedicated Currency & Date Badge (Guaranteed 100% Contrast in ALL Modes) */
+.currency-badge {
+  background-color: #001733 !important;
+  color: #fbbf24 !important;
+  border: 1.5px solid #f59e0b !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 700 !important;
+  padding: 3px 10px !important;
+  border-radius: 2px !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Dedicated Total In Words Box (Guaranteed 100% Contrast in ALL Modes) */
+.total-in-words-box {
+  font-family: 'JetBrains Mono', 'Consolas', monospace !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  padding: 8px 12px !important;
+  border-radius: 2px !important;
+  letter-spacing: -0.01em !important;
+}
+
+.theme-dark .total-in-words-box {
+  background-color: #1e1b18 !important;
+  color: #fde68a !important;
+  border: 2px solid #d97706 !important;
+}
+
+.theme-light .total-in-words-box {
+  background-color: #fef3c7 !important;
+  color: #78350f !important;
+  border: 2px solid #b45309 !important;
+}
+
+/* ========================================================
+   LIGHT ACCOUNTING WORKSTATION MODE (.theme-light)
+   High-contrast, clean desktop accounting interface (Tally / QuickBooks)
+   ======================================================== */
+.theme-light {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.theme-light main {
+  background-color: #f1f5f9;
+}
+
+/* Cards & Panels in Light Mode */
+.theme-light .bg-slate-900 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .bg-slate-950 {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .bg-slate-900\/60,
+.theme-light .bg-slate-950\/70,
+.theme-light .bg-slate-950\/60 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Borders in Light Mode */
+.theme-light .border-slate-800,
+.theme-light .border-slate-700,
+.theme-light .border-slate-600 {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .border-slate-800\/60,
+.theme-light .border-slate-800\/80,
+.theme-light .border-slate-800\/40 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Text Overrides for High Legibility (Dark Charcoal / Pitch Black on Light Backgrounds) */
+/* EXCLUDE header, buttons, badges from being overridden to black text */
+.theme-light main .text-white,
+.theme-light .tally-content .text-white {
+  color: #020617 !important; /* Pitch dark ink for text elements */
+}
+
+.theme-light .text-slate-100,
+.theme-light .text-slate-200 {
+  color: #0f172a !important; /* Deep dark slate */
+}
+
+.theme-light .text-slate-300 {
+  color: #0f172a !important; /* High contrast black/slate */
+  font-weight: 600;
+}
+
+.theme-light .text-slate-400 {
+  color: #1e293b !important; /* Rich charcoal instead of washed out slate */
+}
+
+.theme-light .text-slate-500 {
+  color: #334155 !important; /* Medium slate */
+}
+
+/* Ensure all form labels are bold and pitch dark in light mode */
+.theme-light label {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* Metadata captions like N.º VOUCHER, DATA, REGIME */
+.theme-light span.text-\[10px\],
+.theme-light div.text-\[10px\],
+.theme-light span.text-\[11px\],
+.theme-light div.text-\[11px\] {
+  color: #1e293b !important;
+  font-weight: 600;
+}
+
+.theme-light strong.text-slate-200,
+.theme-light strong.text-slate-100,
+.theme-light strong.text-white {
+  color: #020617 !important;
+  font-weight: 800;
+}
+
+/* Colored accent text readability in light mode */
+.theme-light .text-amber-300,
+.theme-light .text-amber-400 {
+  color: #92400e !important; /* Deep readable bronze/amber */
+}
+
+.theme-light .text-emerald-400,
+.theme-light .text-emerald-300 {
+  color: #065f46 !important; /* Deep forest emerald */
+}
+
+.theme-light .text-blue-400,
+.theme-light .text-blue-300 {
+  color: #1e40af !important; /* Deep navy/royal blue */
+}
+
+/* Inputs, Selects & Textareas */
+.theme-light input:not([type="checkbox"]):not([type="radio"]),
+.theme-light select,
+.theme-light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+  font-weight: 500;
+}
+
+.theme-light input:focus,
+.theme-light select:focus,
+.theme-light textarea:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* Table Grids in Light Mode */
+.theme-light .accounting-grid th,
+.theme-light table thead th {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  font-weight: 800;
+}
+
+.theme-light .accounting-grid td,
+.theme-light table tbody td {
+  background-color: #ffffff;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .accounting-grid tr:hover td,
+.theme-light table tbody tr:hover td {
+  background-color: #f1f5f9 !important;
+}
+
+/* Function Key Rail in Light Mode */
+.theme-light aside {
+  background-color: #e2e8f0 !important;
+  border-left-color: #cbd5e1 !important;
+}
+
+.theme-light .fkey-btn {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.theme-light .fkey-btn:hover {
+  background-color: #f8fafc !important;
+  border-color: #2563eb !important;
+  color: #0f172a !important;
+}
+
+.theme-light .fkey-btn .fkey-label {
+  color: #0369a1 !important;
+}
+
+/* ========================================================
+   RETAIN ENTERPRISE HEADER & NAV RIBBON IN LIGHT MODE
+   The executive top bar stays solid navy with crisp white and gold
+   ======================================================== */
+.theme-light header,
+.theme-light header .bg-\[\#002244\],
+.theme-light header .bg-\[\#001733\] {
+  background-color: #002244 !important;
+}
+
+.theme-light header .bg-\[\#0b1736\] {
+  background-color: #0b1736 !important;
+}
+
+.theme-light header .text-white,
+.theme-light header div.text-white,
+.theme-light header span.text-white {
+  color: #ffffff !important;
+}
+
+.theme-light header .text-slate-100,
+.theme-light header .text-slate-200 {
+  color: #f1f5f9 !important;
+}
+
+.theme-light header .text-slate-300 {
+  color: #e2e8f0 !important;
+}
+
+.theme-light header .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.theme-light header .text-blue-200 {
+  color: #bfdbfe !important;
+}
+
+.theme-light header .text-amber-300,
+.theme-light header .text-amber-400 {
+  color: #fcd34d !important;
+}
+
+.theme-light header button {
+  color: #e2e8f0;
+}
+
+.theme-light header button:hover {
+  color: #ffffff;
+}
+
+/* Ensure buttons with solid dark backgrounds keep crisp white text in Light Mode */
+.theme-light button.bg-emerald-600,
+.theme-light button.bg-emerald-700,
+.theme-light button.bg-blue-600,
+.theme-light button.bg-blue-700,
+.theme-light button.bg-\[\#003366\],
+.theme-light button.bg-\[\#004080\],
+.theme-light .bg-emerald-600 *,
+.theme-light .bg-emerald-700 *,
+.theme-light .bg-blue-600 * {
+  color: #ffffff !important;
+}
+
+/* Keep Top Voucher Header Bar Distinct Navy with Crisp White & Gold Text */
+.theme-light .bg-\[\#002d62\] {
+  background-color: #002d62 !important;
+}
+
+.theme-light .bg-\[\#002d62\] .text-white {
+  color: #ffffff !important;
+}
+
+.theme-light .bg-\[\#002d62\] .text-slate-400 {
+  color: #cbd5e1 !important;
+}
+
+.theme-light .bg-\[\#002d62\] .text-amber-300,
+.theme-light .bg-\[\#002d62\] .text-amber-400 {
+  color: #fcd34d !important;
+}
+
+.theme-light .bg-\[\#002d62\] button.bg-\[\#001f3f\] {
+  background-color: #001f3f !important;
+  border-color: #3b82f6 !important;
+}
+
+.theme-light .bg-\[\#002d62\] button.bg-\[\#001f3f\] .text-amber-400,
+.theme-light .bg-\[\#002d62\] button.bg-\[\#001f3f\] .text-amber-300 {
+  color: #fbbf24 !important;
+}
+
+.theme-light .bg-\[\#002d62\] button.bg-\[\#001f3f\] .text-emerald-400,
+.theme-light .bg-\[\#002d62\] button.bg-\[\#001f3f\] .text-emerald-300 {
+  color: #34d399 !important;
+}
+
+/* Badges and Alert Containers in Light Mode */
+.theme-light .bg-emerald-950,
+.theme-light .bg-emerald-950\/80,
+.theme-light .bg-emerald-950\/90 {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #065f46 !important;
+}
+
+.theme-light .bg-emerald-950 .text-emerald-300,
+.theme-light .bg-emerald-950 .text-emerald-400,
+.theme-light .bg-emerald-950\/90 .text-emerald-300,
+.theme-light .bg-emerald-950\/90 .text-emerald-400 {
+  color: #047857 !important;
+}
+
+.theme-light .bg-amber-950,
+.theme-light .bg-amber-950\/80,
+.theme-light .bg-amber-950\/90 {
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #92400e !important;
+}
+
+.theme-light .bg-amber-950 .text-amber-300,
+.theme-light .bg-amber-950 .text-amber-400,
+.theme-light .bg-amber-950\/90 .text-amber-300,
+.theme-light .bg-amber-950\/90 .text-amber-400 {
+  color: #b45309 !important;
+}
+
+.theme-light .bg-blue-950,
+.theme-light .bg-blue-950\/80 {
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1e40af !important;
+}
+
+/* Modals in Light Mode */
+.theme-light .bg-slate-900.border {
+  background-color: #ffffff !important;
+}
+
+/* Print Styles: Strict 1-Page A4 Precision & Modal Un-fixing */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Completely hide all application shell navigation and background views */
+  header,
+  main,
+  aside,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  html, body, #root, #root > div {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  /* Remove fixed overlay positioning so the modal prints as a single static document */
+  .invoice-modal-overlay {
+    position: static !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  .invoice-modal-card {
+    position: static !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .invoice-print-area {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* High-contrast print fallback: ensure cards print dark ink even if Background Graphics is unchecked */
+  .invoice-print-area .bg-\[\#001733\],
+  .invoice-print-area .bg-slate-900 {
+    background-color: #f8fafc !important;
+    color: #020617 !important;
+    border-color: #0f172a !important;
+  }
+
+  .invoice-print-area .bg-\[\#001733\] *,
+  .invoice-print-area .bg-slate-900 * {
+    color: #020617 !important;
+  }
+
+  .invoice-print-area .bg-\[\#001733\] .text-amber-400,
+  .invoice-print-area .bg-slate-900 .text-amber-400 {
+    color: #020617 !important;
+    font-weight: 900 !important;
+  }
+
+  @page {
+    margin: 8mm 10mm;
+    size: A4 portrait;
+  }
+}
